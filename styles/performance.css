@@ -1,0 +1,168 @@
+/* AKAI Jamboard - Performance View Layout */
+
+.performance-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 260px;
+  gap: 12px;
+  padding: 12px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.center-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+}
+
+/* ==================== MIXER STRIP (Bottom) ==================== */
+#mixer-strip {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding: 8px 12px;
+  flex-shrink: 0;
+}
+
+.mixer {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: flex-end;
+  height: 140px;
+}
+
+.mixer-channel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  min-width: 60px;
+}
+
+.mixer-channel.master {
+  border-color: var(--accent-pink);
+  background: rgba(255, 51, 102, 0.05);
+}
+
+.channel-name {
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--track-color, var(--text-secondary));
+}
+
+.fader-container {
+  position: relative;
+  width: 30px;
+  height: 80px;
+}
+
+/* Vertical range slider */
+.fader {
+  -webkit-appearance: none;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 80px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.fader::-webkit-slider-runnable-track {
+  width: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 2px;
+}
+
+.fader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 8px;
+  background: var(--track-color, var(--text-primary));
+  border-radius: 2px;
+  cursor: grab;
+  margin-left: -8px;
+}
+
+.channel-controls {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.pan-knob {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 2px;
+}
+
+.pan-knob::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 8px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mute-btn,
+.solo-btn {
+  width: 18px;
+  height: 18px;
+  font-family: inherit;
+  font-size: 9px;
+  font-weight: bold;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.mute-btn.active {
+  background: #ff3333;
+  border-color: #ff3333;
+  color: white;
+}
+
+.solo-btn.active {
+  background: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  color: #111;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .performance-layout {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+}

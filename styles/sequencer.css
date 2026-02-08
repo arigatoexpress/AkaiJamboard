@@ -1,0 +1,126 @@
+/* AKAI Jamboard - Step Sequencer Styles */
+
+.step-sequencer {
+  padding: 12px;
+  background: var(--bg-panel);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.seq-grid {
+  display: flex;
+  gap: 4px;
+}
+
+.seq-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 60px;
+}
+
+.seq-label {
+  height: 24px;
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-right: 8px;
+  justify-content: flex-end;
+}
+
+.seq-steps {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.seq-row {
+  display: flex;
+  gap: 2px;
+}
+
+.seq-cell {
+  flex: 1;
+  height: 24px;
+  background: var(--bg-tertiary);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.1s;
+  position: relative;
+  min-width: 16px;
+}
+
+.seq-cell[data-beat="downbeat"] {
+  border-left: 1px solid var(--border-color);
+}
+
+.seq-cell:hover {
+  background: #2a2a44;
+  border-color: var(--accent-pink);
+}
+
+.seq-cell.active {
+  background: var(--accent-pink);
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 4px rgba(255, 51, 102, 0.3);
+}
+
+.seq-cell.step-current {
+  border-color: var(--accent-yellow) !important;
+  box-shadow: 0 0 6px rgba(255, 204, 51, 0.4);
+}
+
+.seq-cell.step-current.active {
+  background: var(--accent-yellow);
+  box-shadow: 0 0 10px rgba(255, 204, 51, 0.6);
+}
+
+/* Step Indicators */
+.seq-step-indicators {
+  display: flex;
+  gap: 2px;
+  margin-left: 64px; /* Align with grid */
+  margin-top: 4px;
+}
+
+.step-indicator {
+  flex: 1;
+  text-align: center;
+  font-size: 8px;
+  color: var(--text-muted);
+  padding: 2px 0;
+  min-width: 16px;
+}
+
+.step-indicator.active {
+  color: var(--accent-yellow);
+  font-weight: bold;
+}
+
+/* Full Sequencer View */
+#full-sequencer {
+  padding: 20px;
+}
+
+/* Sampler View */
+#sample-library {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.seq-cell.step-current {
+  animation: pulse 0.2s ease-out;
+}

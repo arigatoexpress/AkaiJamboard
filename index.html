@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AKAI Jamboard - AI Beatmaker</title>
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/components.css" />
+  <link rel="stylesheet" href="/styles/performance.css" />
+  <link rel="stylesheet" href="/styles/sequencer.css" />
+</head>
+<body>
+  <div id="app">
+    <header id="top-bar">
+      <div class="logo">
+        <h1>AKAI <span class="accent">JAMBOARD</span></h1>
+        <span class="subtitle">AI Beatmaker</span>
+      </div>
+      <div id="transport-bar"></div>
+      <div id="midi-status">
+        <span class="status-dot disconnected" id="midi-dot"></span>
+        <span id="midi-label">MIDI: Disconnected</span>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <nav id="view-tabs">
+        <button class="view-tab active" data-view="performance">Performance</button>
+        <button class="view-tab" data-view="sequencer">Sequencer</button>
+        <button class="view-tab" data-view="sampler">Sampler</button>
+      </nav>
+
+      <div id="view-container">
+        <!-- Performance View -->
+        <section id="performance-view" class="view active">
+          <div class="performance-layout">
+            <div class="left-panel">
+              <div id="pad-grid-container"></div>
+              <div id="ai-control-panel"></div>
+            </div>
+            <div class="center-panel">
+              <div id="waveform-display"></div>
+              <div id="step-sequencer-ui"></div>
+            </div>
+            <div class="right-panel">
+              <div id="knob-controller"></div>
+              <div id="effects-panel"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sequencer View -->
+        <section id="sequencer-view" class="view">
+          <div id="full-sequencer"></div>
+        </section>
+
+        <!-- Sampler View -->
+        <section id="sampler-view" class="view">
+          <div id="sample-library"></div>
+        </section>
+      </div>
+
+      <footer id="mixer-strip">
+        <div id="mixer-ui"></div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="splash-overlay">
+    <div class="splash-content">
+      <h1>AKAI <span class="accent">JAMBOARD</span></h1>
+      <p>AI-Powered Beatmaker &amp; DJ Set</p>
+      <button id="start-btn">START SESSION</button>
+      <p class="hint">Connect your AKAI APK Mini for hardware control</p>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
