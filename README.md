@@ -2,6 +2,8 @@
 
 A web-based AI-powered beatmaking and DJ performance application designed for the AKAI APK Mini MIDI controller.
 
+> See `AGENTS.md` for agentic navigation.
+
 ## Features
 
 - **AI Beat Generation** - Algorithmically generates drum patterns, basslines, melodies, and chord progressions across 8 genres (Hip-Hop, House, Techno, Trap, DnB, Lo-Fi, Funk, Ambient)
